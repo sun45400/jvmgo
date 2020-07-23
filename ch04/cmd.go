@@ -86,8 +86,8 @@ func testLocalVars(vars rtda.LocalVars) {
 	vars.SetLong(2, 2997924580)
 	vars.SetLong(4, -2997924580)
 	vars.SetFloat(6, 3.1415926)
+	//todo double incorrect
 	vars.SetDouble(7, 2.71828182845)
-	//todo error
 	vars.SetRef(9, nil)
 	println(vars.GetInt(0))
 	println(vars.GetInt(1))
@@ -102,6 +102,7 @@ func testOperandStack(ops *rtda.OperandStack) {
 	ops.PushInt(100)
 	ops.PushInt(-100)
 	ops.PushLong(2997924580)
+	//todo long incorrect
 	ops.PushLong(-2997924580)
 	ops.PushFloat(3.1415926)
 	ops.PushDouble(2.71828182845)
