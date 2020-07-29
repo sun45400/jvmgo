@@ -30,15 +30,15 @@ func (self LocalVars) GetFloat(index uint) float32 {
 	return math.Float32frombits(bits)
 }
 
-//long 存两个
+//long 存两个 todo 需要分析
 func (self LocalVars) SetLong(index uint, val int64) {
 	self[index].num = int32(val)
 	self[index+1].num = int32(val >> 32)
 }
 func (self LocalVars) GetLong(index uint) int64 {
-	low := self[index].num
-	high := self[index+1].num
-	return int64(high<<32) | int64(low)
+	low := uint32(self[index].num)
+	high := uint32(self[index+1].num)
+	return int64(high)<<32 | int64(low)
 }
 
 //double 转long，按long处理
