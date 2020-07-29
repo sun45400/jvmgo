@@ -19,7 +19,7 @@ type BranchInstruction struct {
 }
 
 func (self *BranchInstruction) FetchOperands(reader *BytecodeReader) {
-	self.Offset = int(reader.ReaderInt16())
+	self.Offset = int(reader.ReadInt16())
 }
 
 //store & load 指令
